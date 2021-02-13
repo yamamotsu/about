@@ -1,17 +1,3 @@
-## Gridsomeを使った静的サイト生成
+Add static files here. Files in this directory will be copied directly to `dist` folder during build. For example, /static/robots.txt will be located at https://yoursite.com/robots.txt.
 
-GridsomeはVue.jsで静的サイトが作れるツール
-Github Pages や Netlifyなどにアップすればサーバーレスにサイトを作れる
-
-MDやWordpressのデータをいい感じに紐付けてVueの変数に渡せる仕組みがある
-
-### 参考サイト
-
-[Vue.jsのサイトジェネレータGridsomeが最高かもしれない](https://www.keisuke69.net/entry/2020/06/09/112907)
-
-### プロジェクト構成
-
-#### `gridsome.config.js`
-
-データソースや諸々の設定ファイル
-
+This file should be deleted.

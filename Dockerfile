@@ -12,7 +12,7 @@ FROM node:latest
 LABEL maintainer="development@crowdcode.io" \
       description="Simple vue-cli docker container"
 
-ARG VUE_CLI_VERSION=3.3.0 
+ARG VUE_CLI_VERSION=3.3.0
 ARG GRIDSOME_CLI_VERSION=4.3.1
 ENV GRIDSOME_CLI_VERSION=${GRIDSOME_CLI_VERSION}
 ENV VUE_CLI_VERSION ${VUE_CLI_VERSION}
