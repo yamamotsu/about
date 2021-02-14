@@ -38,6 +38,7 @@ RUN set -xe \
 WORKDIR $USER_HOME_DIR
 ADD package.json $USER_HOME_DIR
 RUN yarn install
+RUN yarn add -g gh-pages
 
 # not declared to avoid anonymous volume leak
 # VOLUME "$USER_HOME_DIR/.cache/yarn"

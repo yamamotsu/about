@@ -27,4 +27,6 @@ module.exports = {
   // Internal hostname provided by docker
   host: process.env.HOSTNAME,
   port: 8080,
+  siteUrl: 'https://yamamotsu.github.io',
+  pathPrefix: '/about'
 }
