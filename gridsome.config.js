@@ -6,12 +6,15 @@
 
 module.exports = {
   siteName: 'YamamotsuLab',
+  siteUrl: 'https://yamamotsu.github.io',
+  pathPrefix: '/about',
   plugins: [
     {
       use: '@gridsome/source-filesystem',
       options: {
         typeName: 'Post',
         path: './content/works/**/*.md',
+        pathPrefix: '/about',
       }
     }
   ],
@@ -24,9 +27,8 @@ module.exports = {
   icon: {
     favicon: "./src/favicon.png"
   },
+
   // Internal hostname provided by docker
-  host: process.env.HOSTNAME,
-  port: 8080,
-  siteUrl: 'https://yamamotsu.github.io',
-  pathPrefix: '/about'
+  // host: process.env.HOSTNAME,
+  // port: 8080,
 }
