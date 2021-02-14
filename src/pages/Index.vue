@@ -1,9 +1,16 @@
 <template>
   <Layout>
-
-    <div class="cards-grid">
+    <v-container>
+      <v-row class="grey lighten-3">
+        <v-col cols="12" sm="6" md="6" lg="4" xl="4"
+          v-for="edge in $page.posts.edges" :key="edge.node.id">
+          <card class="card" :card="edge.node"/>
+        </v-col>
+      </v-row>
+    </v-container>
+    <!-- <div class="cards-grid">
       <card class="card" v-for="edge in $page.posts.edges" :key="edge.node.id" :card="edge.node"></card>
-    </div>
+    </div> -->
   </Layout>
 </template>
 
@@ -36,7 +43,7 @@ Vue.component('card', Card)
 
 export default {
   metaInfo: {
-    title: 'Hello, world!'
+    Carditle: 'Hello, world!'
   }
 }
 </script>
@@ -55,8 +62,8 @@ export default {
 }
 
 .card {
-  width: 380px;
-  margin-right: 24px;
-  margin-bottom: 24px;
+  /* width: 380px; */
+  /* margin-right: 24px;
+  margin-bottom: 24px; */
 }
 </style>

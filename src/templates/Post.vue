@@ -34,7 +34,7 @@ query Post($id: ID!){
     role
     github
     tags
-    thumbnail (height: 400, fit: cover, quality: 90)
+    thumbnail (height: 480, fit: cover, quality: 90)
   }
 }
 </page-query>
@@ -43,10 +43,12 @@ query Post($id: ID!){
 
 .post {
   background-color: #fff;
+  border-radius: 12px;
+  padding: 24px;
 }
 
 .post-content{
-  padding: 0 24px;
+  /* padding: 0 24px; */
 }
 
 .works-info p {
@@ -76,6 +78,7 @@ query Post($id: ID!){
 
 .thumbnail {
   margin: 0 auto;
+  /* min-height: 480px; */
   max-width: 100%;
   display: block;
 }
@@ -87,4 +90,5 @@ query Post($id: ID!){
   margin-top: 0.6em;
   margin-bottom: 0.6em;
 }
+
 </style>
