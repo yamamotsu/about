@@ -20,7 +20,7 @@ query{
         period
         role
         tags
-        thumbnail
+        thumbnail (width: 340, fit: cover, quality: 90)
         content
       }
     }
@@ -55,6 +55,7 @@ export default {
 }
 
 .card {
+  width: 380px;
   margin-right: 24px;
   margin-bottom: 24px;
 }

@@ -9,7 +9,7 @@ github: "https://github.com/yamamotsu/"
 tags: ["ねこ", "Catto", "Nuko"]
 id: 4
 blog_id: 102
-thumbnail: 'kitten_360.jpg'
+thumbnail: '../../src/assets/images/kitten_360.jpg'
 ---
 
 ## 概要

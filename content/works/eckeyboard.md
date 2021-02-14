@@ -8,7 +8,7 @@ github: "https://github.com/yamamotsu/TopreSplit"
 tags: ["3Dプリンタ", "C/C++", "Hardware"]
 id: 1
 blog_id: 100
-thumbnail: 'eckeyboard.png'
+thumbnail: '../../src/assets/images/eckeyboard.png'
 ---
 
 ## 概要

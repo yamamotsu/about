@@ -7,9 +7,8 @@
     <div class="card-thumbnail-container">
       <!-- <g-image alt="thumbnail" :src="thumbnailPath" width="300"/> -->
       <g-image
-        :src="require(`!!assets-loader!@images/${card.thumbnail}`)"
-        width="400"
-        height="510"
+        :src="card.thumbnail"
+        position="center"
         class="card-thumbnail"
         />
       <!-- <img src="thumbnailPath" alt="thumbnail"/> -->
@@ -43,7 +42,6 @@ export default {
 .card-container {
   display: flex;
   flex-direction: column;
-  width: 380px;
 
   background-color: #FFF;
   box-shadow: #0000001e 0px 3px 6px;
@@ -59,6 +57,10 @@ export default {
   border-radius: 13px;
   box-sizing: border-box;
   max-width: 100%;
+  /* min-height: 330px; */
+
+  margin: 0 auto;
+  display: block;
 }
 
 .card-info-container{

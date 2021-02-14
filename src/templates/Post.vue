@@ -2,10 +2,9 @@
   <Layout>
     <div class="post">
       <g-image
-        :src="require(`!!assets-loader!@images/${$page.post.thumbnail}`)"
-        width="400"
-        height="510"
-        class="card-thumbnail"
+        :src="$page.post.thumbnail"
+        position="center"
+        class="thumbnail"
         />
       <div class="post-content">
         <h1 class="article-title">{{ $page.post.title }}</h1>
@@ -35,7 +34,7 @@ query Post($id: ID!){
     role
     github
     tags
-    thumbnail
+    thumbnail (height: 400, fit: cover, quality: 90)
   }
 }
 </page-query>
@@ -74,6 +73,13 @@ query Post($id: ID!){
 </style>
 
 <style>
+
+.thumbnail {
+  margin: 0 auto;
+  max-width: 100%;
+  display: block;
+}
+
 .article p {
   color: #5A5A5A;
   font-size: 24px;

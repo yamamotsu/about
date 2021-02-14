@@ -9,7 +9,7 @@ github: "https://github.com/yamamotsu/TopreSplit"
 tags: ["Graphic Design", "Adobe XD", "Logo"]
 id: 3
 blog_id: 103
-thumbnail: 'favicon.png'
+thumbnail: '../../src/assets/images/favicon.png'
 ---
 
 ## 概要
