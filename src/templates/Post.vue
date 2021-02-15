@@ -7,15 +7,18 @@
         class="thumbnail"
         />
       <div class="post-content">
-        <h1 class="article-title">{{ $page.post.title }}</h1>
-        <div class="works-info">
-          <p>Year: {{$page.post.year}}</p>
-          <p>Period: {{$page.post.period}}</p>
-          <p>Role: {{$page.post.role}}</p>
+        <div class="post-summary">
+          <h1 class="article-title">{{ $page.post.title }}</h1>
+          <div class="works-info">
+            <p>Year: {{$page.post.year}}</p>
+            <p>Period: {{$page.post.period}}</p>
+            <p>Role: {{$page.post.role}}</p>
+          </div>
+          <div class="tags">
+            <p v-for="tag in $page.post.tags" :key="tag.id">#{{tag}}</p>
+          </div>
         </div>
-        <div class="tags">
-          <p v-for="tag in $page.post.tags" :key="tag.id">#{{tag}}</p>
-        </div>
+        <v-divider/>
         <article class="article" v-html="$page.post.content" />
       </div>
     </div>
@@ -48,19 +51,32 @@ query Post($id: ID!){
 }
 
 .post-content{
-  /* padding: 0 24px; */
+  padding: 0 18px;
+}
+
+.post-summary {
+  margin: 18px 0;
 }
 
 .works-info p {
   font-size: 26px;
 }
+.tags {
+  margin-top: 6px;
+}
 .tags p {
   font-size: 22px;
 }
-/*
-.article h1 {
-  font-size: 30px;
+
+h1.article-title {
+  margin: 12px 0;
 }
+
+.article {
+  margin: 24px 18px 0 18px;
+}
+
+/*
 .article h2 {
   font-size: 28px;
 }

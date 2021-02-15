@@ -9,21 +9,30 @@
               class="header-logo link">
               <!-- <g-image alt="Logo"
                 src="~/favicon.png" width="54" /> -->
-              <logo :colorTheme="hover? 'dark':'light'"
-                  :width="72" :height="72"
+              <logo :colorTheme="hover? 'fill':'light'"
+                  :width="54" :height="54"
                   class="header-svg"/>
               <p class="header-sitename">
                 {{ $static.metadata.siteName }}
               </p>
           </g-link>
         </v-hover>
-        <nav class="nav">
+
+        <v-tabs
+          v-model="tab"
+          class="nav"
+          right
+        >
+          <v-tab v-for="item in links" :key="item">{{item}}</v-tab>
+        </v-tabs>
+        <!-- <nav class="nav">
           <g-link class="nav__link" to="/">Home</g-link>
           <g-link class="nav__link" to="/about/">About</g-link>
-        </nav>
+        </nav> -->
       </div>
     </header>
     <main class="main">
+      <!-- <v-tabs-items v-model="tab"/> -->
       <slot/>
     </main>
 
@@ -46,11 +55,16 @@ export default {
     return {
       links: [
         'Home',
-        'About Us',
-        'Team',
-        'Services',
-        'Blog',
-        'Contact Us',]
+        'SW&HW',
+        'Graphics',
+        'About',
+      ],
+      tab: 0
+    }
+  },
+  watch: {
+    tab (){
+      this.$emit("tab", this.tab)
     }
   }
 }
@@ -120,17 +134,22 @@ query {
 }
 
 .main {
-  max-width: 1240px;
-  padding: 0 12px;
-  margin-top: 12px;
+  width: 1240px;
+  max-width: 100%;
+  padding: 0 18px;
+  margin-top: 24px;
   margin-bottom: auto;
   margin-left: auto;
   margin-right: auto;
 }
 
+.nav {
+  max-width: 40%;
+}
+
 .nav__link {
-  margin-left: 24px;
-  font-size: 24px;
+  /* margin-left: 24px;
+  font-size: 24px; */
   text-decoration: none;
   color: #5A5A5A;
 }

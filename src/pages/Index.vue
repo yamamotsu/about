@@ -1,16 +1,7 @@
 <template>
-  <Layout>
-    <v-container>
-      <v-row class="grey lighten-3">
-        <v-col cols="12" sm="6" md="6" lg="4" xl="4"
-          v-for="edge in $page.posts.edges" :key="edge.node.id">
-          <card class="card" :card="edge.node"/>
-        </v-col>
-      </v-row>
-    </v-container>
-    <!-- <div class="cards-grid">
-      <card class="card" v-for="edge in $page.posts.edges" :key="edge.node.id" :card="edge.node"></card>
-    </div> -->
+  <Layout @tab="t => { tab = t }">
+    <cards v-if="tab == 0" :edges="$page.posts.edges"/>
+    <about v-if="tab == 3"/>
   </Layout>
 </template>
 
@@ -37,13 +28,28 @@ query{
 
 <script>
 import Vue from 'vue'
-import Card from '~/components/Card.vue'
+import Cards from '~/components/Cards'
+import About from '~/components/About'
 
-Vue.component('card', Card)
+Vue.component('cards', Cards)
+Vue.component('about', About)
 
 export default {
+  data() {
+    return {
+      links: [
+        'Home',
+        'SW&HW',
+        'Graphics',
+        'About',
+      ],
+      tab: 0,
+    }
+  },
   metaInfo: {
     Carditle: 'Hello, world!'
+  },
+  methods: {
   }
 }
 </script>
