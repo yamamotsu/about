@@ -3,6 +3,10 @@
     elevation="3"
     >
     <v-hover v-slot="{ hover }">
+      <stripe-anim :doAnimation="hover"
+        :borderWidth="14"
+        borderColor="#F8410C"
+        :overlay="false">
       <g-link
         :to="card.path"
         class="card-container link">
@@ -30,11 +34,19 @@
           </div>
         </div>
       </g-link>
+      </stripe-anim>
     </v-hover>
   </v-card>
 </template>
 
 <script>
+import Vue from 'vue'
+import FocusAnimation from '~/components/BorderFocusAnimation'
+import StripeAnimation from '~/components/BorderStripeAnimation'
+import GrowAnimation from '~/components/BorderGrowAnimation'
+// Vue.component('focus-anim', FocusAnimation)
+Vue.component('stripe-anim', GrowAnimation)
+
 export default {
   props: ['card'],
   computed: {
@@ -50,18 +62,6 @@ export default {
 .card-container {
   display: flex;
   flex-direction: column;
-
-  /* background-color: #FFF; */
-  /* box-shadow: #0000001e 0px 3px 6px;
-  border-radius: 32px; */
-  border: solid #FFF 0px;
-  padding: 18px;
-  transition: all .3s ease-in-out;
-}
-
-.card-container:hover {
-  padding: 0;
-  border:solid #F8410C 18px;
 }
 
 .card-thumbnail-container{
@@ -92,16 +92,86 @@ export default {
 }
 
 h2 {
-  /* color: #5a5a5a; */
   transition: color .3s ease-in-out;
   font-size: 26px;
   margin: 4px 0 12px;
 }
-/*
-.card-info-container p{
-  margin-right: 0.7em;
-  margin-top: 0;
-  margin-bottom: 0;
-} */
+
+.card-border-container,
+.card-border-container__inner {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.card-border-container::before,
+.card-border-container::after,
+.card-border-container__inner::before,
+.card-border-container__inner::after {
+  content: '';
+  /* background-color: #F8410C; */
+  display: block;
+  position: absolute;
+  z-index: 10;
+  transition: all .2s ease-in-out;
+}
+/* Left Top border */
+.card-border-container::after {
+  width: 100%;
+  height: 18px;
+  background-size: 64px 18px;
+  background-image: repeating-linear-gradient(to right top, #F8410C, transparent, 19px);
+  background-repeat: repeat-x;
+  top: 0px;
+  left: 0px;
+}
+/* Right Bottom border */
+.card-border-container::before {
+  background-size: 36px 18px;
+  background-image: linear-gradient(to left, #F8410C, #F8410C 22px, transparent 22px, transparent 36px);
+  background-repeat: repeat-x;
+  /* width: 0px;
+  height: 2px; */
+  right: 0px;
+  bottom: 0px;
+}
+/* Right Top border */
+.card-border-container__inner::after {
+  background-size: 18px 36px;
+  background-image: linear-gradient(to bottom, #F8410C, #F8410C 22px, transparent 22px, transparent 36px);
+  background-repeat: repeat-y;
+  /* width: 2px;
+  height: 0px; */
+  top: 0px;
+  right: 0px;
+}
+/* Left Bottom border */
+.card-border-container__inner::before {
+  background-size: 18px 36px;
+  background-image: linear-gradient(to top, #F8410C, #F8410C 22px, transparent 22px, transparent 36px);
+  background-repeat: repeat-y;
+  /* width: 2px;
+  height: 0px; */
+  bottom: 0px;
+  left: 0px;
+}
+
+.card-border-container:hover::after{
+  background-image: linear-gradient(to right, #F8410C, #F8410C 36px, transparent 36px, transparent 36px);
+}
+.card-border-container:hover::before {
+  /* width: 100%; */
+  background-image: linear-gradient(to left, #F8410C, #F8410C 36px, transparent 36px, transparent 36px);
+}
+
+.card-border-container__inner:hover::after{
+  background-image: linear-gradient(to bottom, #F8410C, #F8410C 36px, transparent 36px, transparent 36px);
+}
+.card-border-container__inner:hover::before {
+  background-image: linear-gradient(to top, #F8410C, #F8410C 36px, transparent 36px, transparent 36px);
+  /* height: 100%; */
+}
 
 </style>

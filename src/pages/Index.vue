@@ -1,6 +1,8 @@
 <template>
   <Layout @tab="t => { tab = t }">
     <cards v-if="tab == 0" :edges="$page.posts.edges"/>
+    <cards v-if="tab == 1" :edges="$page.posts.edges" filterTag="Software"/>
+    <cards v-if="tab == 2" :edges="$page.posts.edges" filterTag="Hardware"/>
     <about v-if="tab == 3"/>
   </Layout>
 </template>

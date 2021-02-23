@@ -14,20 +14,18 @@ module.exports = {
       options: {
         typeName: 'Post',
         path: './content/works/**/*.md',
-        pathPrefix: '/about',
       }
-    }
+    },
   ],
-  chainWebpack: config => { // it may be required for using dynamic image in <g-image>
-    config.resolve.alias.set('@images', '@/assets/images')
-  },
   templates:{
     Post: '/posts/:id'
   },
   icon: {
     favicon: "./src/favicon.png"
   },
-
+  build: {
+    transpile: /@babel.*/ // transpile ESM modules within all fullcalendar packages
+  },
   // Internal hostname provided by docker
   // host: process.env.HOSTNAME,
   // port: 8080,
