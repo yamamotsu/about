@@ -21,8 +21,9 @@ body {
 }
 
 h1 {
-  font-size: 42px;
+  font-size: 36px;
   color: #F8410C;
+  line-height: 48px;
 }
 h2 {
   font-size: 34px;
@@ -47,16 +48,6 @@ h4 {
 }
 .link-nodecoration {
   text-decoration: none;
-}
-
-.works-info{
-  color: #5a5a5a;
-  font-size: 22px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 0;
-  line-height: 1.5rem;
 }
 
 .tags{

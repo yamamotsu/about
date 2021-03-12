@@ -22,21 +22,12 @@
             <h2
               :class="{ 'light-accent-text': hover,
                         'light-main-text': !hover }">
-                        {{card.title}}</h2>
-            <div class="works-info">
-              <v-chip outlined class="chip">
-                <v-icon left>mdi-calendar</v-icon>
-                {{card.year}}
-              </v-chip>
-              <v-chip outlined class="chip">
-                <v-icon left>mdi-circle-slice-3</v-icon>
-                {{card.period}}
-              </v-chip>
-              <v-chip outlined class="chip">
-                <v-icon left>mdi-account-circle</v-icon>
-                {{card.role}}
-              </v-chip>
-            </div>
+              {{card.title}}
+            </h2>
+            <works-info :items="worksInfo"
+              :outlined="true"
+              :label="true"
+              color="#F8410C" background="#FFF"/>
             <div class="tags">
               <p v-for="tag in card.tags" :key="tag.id">#{{tag}}</p>
             </div>
@@ -50,34 +41,38 @@
 
 <script>
 import Vue from 'vue'
+import WorksInfoChips from '~/components/WorkInfoChips'
 import FocusAnimation from '~/components/BorderFocusAnimation'
-import StripeAnimation from '~/components/BorderStripeAnimation'
-import GrowAnimation from '~/components/BorderGrowAnimation'
-import RefrectionOverlay from '~/components/RefrectionOverlay'
 Vue.component('focus-anim', FocusAnimation)
-// Vue.component('stripe-anim', GrowAnimation)
-// Vue.component('overlay', RefrectionOverlay)
+Vue.component('works-info', WorksInfoChips)
 
 export default {
   props: ['card'],
   computed: {
     postPath (){
       return "/posts/"+this.card.id
+    },
+    worksInfo() {
+      return [
+        {
+          icon: "mdi-calendar",
+          text: this.card.year
+        },
+        {
+          icon: "mdi-circle-slice-3",
+          text: this.card.period
+        },
+        {
+          icon: "mdi-account-circle",
+          text: this.card.role
+        },
+      ]
     }
   }
 }
 </script>
 
 <style scoped>
-
-.works-info .v-chip {
-  margin-right: 6px;
-  margin-bottom: 6px;
-  background-color: #5a5a5a;
-  color: #F8410C;
-  border-color: #F8410C;
-  padding: 0 8px;
-}
 
 .card-container {
   display: flex;
