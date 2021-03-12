@@ -1,9 +1,13 @@
 <template>
   <Layout @tab="t => { tab = t }">
-    <cards v-if="tab == 0" :edges="$page.posts.edges"/>
-    <cards v-if="tab == 1" :edges="$page.posts.edges" filterTag="Software"/>
-    <cards v-if="tab == 2" :edges="$page.posts.edges" filterTag="Hardware"/>
-    <about v-if="tab == 3"/>
+    <v-tabs-items v-model="tab" class="main-tab-items">
+      <v-tab-item :key="0">
+        <cards :edges="$page.posts.edges"/>
+      </v-tab-item>
+      <v-tab-item :key="1">
+        <about/>
+      </v-tab-item>
+    </v-tabs-items>
   </Layout>
 </template>
 
@@ -67,6 +71,10 @@ export default {
   flex-wrap: wrap;
   align-items: flex-start;
   align-self: flex-start;
+}
+
+.main-tab-items.v-tabs-items {
+  background-color: transparent;
 }
 
 .card {

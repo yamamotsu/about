@@ -10,19 +10,23 @@
               <logo :colorTheme="hover? 'fill':'light'"
                   :width="54" :height="54"
                   class="header-svg"/>
-              <p class="header-sitename">
-                {{ $static.metadata.siteName }}
-              </p>
+              <div v-if="!$vuetify.breakpoint.xsOnly">
+                <p class="header-sitename">
+                  {{ $static.metadata.siteName }}
+                </p>
+              </div>
           </g-link>
         </v-hover>
 
-        <v-tabs
-          v-model="tab"
-          class="nav"
-          right
-        >
-          <v-tab v-for="item in links" :key="item">{{item}}</v-tab>
-        </v-tabs>
+        <div>
+          <v-tabs
+            v-model="tab"
+            background-color="transparent"
+            right
+          >
+            <v-tab v-for="item in links" :key="item">{{item}}</v-tab>
+          </v-tabs>
+        </div>
       </div>
     </header>
     <main class="main">
@@ -48,8 +52,6 @@ export default {
     return {
       links: [
         'Home',
-        'Software',
-        'Hardware',
         'About',
       ],
       tab: 0
@@ -95,7 +97,7 @@ query {
   height: 70px;
   padding: 0 24px;
   margin: 0 auto;
-  max-width: 1240px;
+  max-width: 1080px;
 }
 
 .header-logo {
@@ -127,17 +129,13 @@ query {
 }
 
 .main {
-  width: 1240px;
+  width: 1080px;
   max-width: 100%;
-  padding: 0 18px;
-  margin-top: 24px;
+  padding: 0px;
+  margin-top: 12px;
   margin-bottom: auto;
   margin-left: auto;
   margin-right: auto;
-}
-
-.nav {
-  max-width: 40%;
 }
 
 .nav__link {
