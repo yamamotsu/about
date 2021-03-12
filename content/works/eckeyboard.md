@@ -21,6 +21,4 @@ thumbnail: '../../src/assets/images/eckeyboard.png'
 キーボードの回路設計・ファームウェア開発・電子部品のはんだ付け及び，3DCADによる筐体の設計と3Dプリンタ出力までのすべてを担当しております．現在は肝となるアナログ回路の動作テストが完了し，発注した基板を利用した複数のスイッチの押下検知等の動作チェックを行っております．
 キーボードの回路基板の設計データは以下のGithubからご覧いただけます．
 
-## リンク
-
-- [https://github.com/yamamotsu/TopreSplit](https://github.com/yamamotsu/TopreSplit)
+[https://github.com/yamamotsu/TopreSplit](https://github.com/yamamotsu/TopreSplit)

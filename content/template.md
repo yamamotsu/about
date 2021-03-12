@@ -1,11 +1,10 @@
 ---
-title: "Neko"
-description: "The first post written in Markdown"
+title: ""
 date: 2019-04-20
 year: 2019
-period: "2 months"
-role: "Nuko"
-github: "https://github.com/yamamotsu/"
+period: ""
+role: ""
+github: ""
 tags: ["ねこ", "Catto", "Nuko"]
 id: 4
 blog_id: 102
