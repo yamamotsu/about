@@ -157,4 +157,11 @@ h1.article-title {
   margin-bottom: 0.6em;
 }
 
+.article li p{
+  color: inherit;
+  font-size: 1em;
+  line-height: inherit;
+  margin: inherit;
+}
+
 </style>

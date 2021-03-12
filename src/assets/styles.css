@@ -40,6 +40,24 @@ h4 {
   color: #5a5a5a;
 }
 
+ul {
+  font-size: 24px;
+  color: #5a5a5a;
+}
+
+ul ul {
+  margin-left: 24px;
+  font-size: 0.8em;
+}
+
+li {
+  list-style-position: inside;
+}
+
+li p {
+  display: inline;
+}
+
 .link {
   cursor:pointer;
   text-decoration: none;
