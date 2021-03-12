@@ -8,6 +8,7 @@
         />
       <div class="post-content">
         <div class="post-summary">
+          <v-breadcrumbs :items="breadCrumbItems" large/>
           <h1 class="article-title">{{ $page.post.title }}</h1>
           <div class="works-info">
             <p>Year: {{$page.post.year}}</p>
@@ -42,12 +43,34 @@ query Post($id: ID!){
 }
 </page-query>
 
+<script>
+export default {
+  computed: {
+    breadCrumbItems() {
+      return [
+        {
+          text: 'Home',
+          disabled: false,
+          href: '/'
+        },
+        {
+          text: this.$page.post.title,
+          disabled: true,
+          href: this.$page.post.path
+        },
+      ]
+    }
+  }
+}
+</script>
+
 <style scoped>
 
 .post {
   background-color: #fff;
   border-radius: 12px;
   padding: 24px;
+  margin: 8px 0;
 }
 
 .post-content{
