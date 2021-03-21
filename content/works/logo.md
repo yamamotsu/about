@@ -7,6 +7,7 @@ period: "1 day"
 role: "Design"
 github: "https://github.com/yamamotsu/TopreSplit"
 tags: ["Graphic Design", "Adobe XD", "Logo"]
+slug: "sitelogo"
 id: 3
 blog_id: 103
 thumbnail: '../../src/assets/images/favicon.png'

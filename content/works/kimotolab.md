@@ -6,6 +6,7 @@ period: "1 month"
 role: "Plan&Develop"
 github: ""
 tags: ["Linuxサーバー", "Wordpress"]
+slug: "kimotolab"
 id: 7
 blog_id: 106
 thumbnail: '../../src/assets/images/kimotolab.png'

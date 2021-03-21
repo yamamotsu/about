@@ -6,6 +6,7 @@ period: "WIP"
 role: "HW Design&Develop"
 github: "https://github.com/yamamotsu/TopreSplit"
 tags: ["3Dプリンタ", "C/C++", "Hardware"]
+slug: "eckeyboard"
 id: 1
 blog_id: 100
 thumbnail: '../../src/assets/images/eckeyboard.png'

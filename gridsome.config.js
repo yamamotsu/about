@@ -18,7 +18,7 @@ module.exports = {
     },
   ],
   templates:{
-    Post: '/posts/:id'
+    Post: '/:year/:slug'
   },
   icon: {
     favicon: "./src/favicon.png"

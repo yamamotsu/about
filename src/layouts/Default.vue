@@ -7,17 +7,17 @@
           <g-link to="/"
               :class="{ 'on-hover': hover }"
               class="header-logo link">
-              <logo :colorTheme="hover? 'fill':'light'"
-                  :width="54" :height="54"
-                  class="header-svg"/>
-              <div v-if="!$vuetify.breakpoint.xsOnly">
-                <p class="header-sitename">
-                  {{ $static.metadata.siteName }}
-                </p>
-              </div>
+            <logo :colorTheme="hover? 'fill':'light'"
+                :width="54" :height="54"
+                class="header-svg"/>
+            <div v-if="!$vuetify.breakpoint.xsOnly">
+              <p class="header-sitename">
+                {{ $static.metadata.siteName }}
+              </p>
+            </div>
           </g-link>
         </v-hover>
-
+        <!-- 
         <div>
           <v-tabs
             v-model="tab"
@@ -26,11 +26,17 @@
           >
             <v-tab v-for="item in links" :key="item">{{item}}</v-tab>
           </v-tabs>
-        </div>
+        </div> -->
       </div>
     </header>
-    <main class="main">
-      <slot/>
+
+    <main class="main-container">
+      <profile-card
+        class="profile-card"
+        v-if="!$vuetify.breakpoint.xsOnly"/>
+      <div class="main">
+        <slot/>
+      </div>
     </main>
 
     <div class="_footer">
@@ -44,15 +50,16 @@
 <script>
 import Vue from 'vue'
 import SiteLogo from '~/components/SiteLogo'
-
+import ProfileCard from '~/components/ProfileCard'
+Vue.component('profile-card', ProfileCard)
 Vue.component('logo', SiteLogo)
 
 export default {
   data () {
     return {
       links: [
-        'Home',
-        'About',
+        'Software',
+        'Artworks',
       ],
       tab: 0
     }
@@ -97,7 +104,7 @@ query {
   height: 70px;
   padding: 0 24px;
   margin: 0 auto;
-  max-width: 1080px;
+  max-width: 1330px;
 }
 
 .header-logo {
@@ -128,14 +135,31 @@ query {
   transition: color .3s ease-in-out;
 }
 
-.main {
-  width: 1080px;
-  max-width: 100%;
-  padding: 0px;
+.main-container {
   margin-top: 12px;
-  margin-bottom: auto;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-direction: row;
+
+  margin-bottom: auto;
+  max-width: 1330px;
+}
+
+.profile-card {
+  /* position: absolute; */
+  margin-top: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-bottom: auto;
+}
+
+.main {
+  /* width: 1080px; */
+  /* margin-left: 262px; */
+  max-width: 100%;
+  padding: 0px;
+  margin-bottom: auto;
 }
 
 .nav__link {

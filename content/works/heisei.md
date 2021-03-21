@@ -6,6 +6,7 @@ period: "10 days"
 role: "Hardware&Embed"
 github: "https://github.com/oita-kosen/Human-Equipping-Incredible-SEnsor-Interface"
 tags: ["組み込み", "ハードウェア", "3Dプリンタ"]
+slug: "heisei"
 id: 5
 blog_id: 103
 thumbnail: '../../src/assets/images/heisei.jpg'

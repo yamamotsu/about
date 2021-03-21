@@ -4,9 +4,9 @@
       <v-tab-item :key="0">
         <cards :edges="$page.posts.edges"/>
       </v-tab-item>
-      <v-tab-item :key="1">
+      <!-- <v-tab-item :key="1">
         <about/>
-      </v-tab-item>
+      </v-tab-item> -->
     </v-tabs-items>
   </Layout>
 </template>
@@ -43,12 +43,6 @@ Vue.component('about', About)
 export default {
   data() {
     return {
-      links: [
-        'Home',
-        'SW&HW',
-        'Graphics',
-        'About',
-      ],
       tab: 0,
     }
   },

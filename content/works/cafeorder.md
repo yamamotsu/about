@@ -5,6 +5,7 @@ year: 2019
 period: "2months"
 role: "Plan&Develop"
 tags: ["Javascript", "Vuejs", "Webアプリ"]
+slug: "cafeorder"
 id: 2
 blog_id: 101
 thumbnail: '../../src/assets/images/cafeorder.png'

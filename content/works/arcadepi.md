@@ -6,6 +6,7 @@ period: "4 months"
 role: "GameEngine&Audio"
 github: "https://github.com/yamamotsu/ArcadePi"
 tags: ["C/C++", "組み込み", "RaspberryPi"]
+slug: "arcadepi"
 id: 6
 blog_id: 105
 thumbnail: '../../src/assets/images/arcadepi.png'

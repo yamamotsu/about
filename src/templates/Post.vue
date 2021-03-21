@@ -46,6 +46,7 @@ query Post($id: ID!){
 import Vue from 'vue'
 import WorksInfoChips from '~/components/WorkInfoChips'
 Vue.component('works-info', WorksInfoChips)
+
 export default {
   computed: {
     breadCrumbItems() {
@@ -83,12 +84,10 @@ export default {
 </script>
 
 <style scoped>
-
 .post {
   background-color: #fff;
   border-radius: 12px;
   padding: 24px;
-  margin: 8px 0;
 }
 
 .post-content{
@@ -125,18 +124,6 @@ h1.article-title {
 .article {
   margin: 24px 18px 0 18px;
 }
-
-/*
-.article h2 {
-  font-size: 28px;
-}
-.article h3 {
-  font-size: 26px;
-}
-.article h4 {
-  font-size: 24px;
-  font-weight: 500;
-} */
 
 </style>
 
