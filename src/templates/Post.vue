@@ -138,7 +138,7 @@ h1.article-title {
 
 .article p {
   color: #5A5A5A;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.4em;
   margin-top: 0.6em;
   margin-bottom: 0.6em;
