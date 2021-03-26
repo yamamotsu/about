@@ -6,6 +6,7 @@ period: ""
 role: ""
 github: ""
 tags: ["ねこ", "Catto", "Nuko"]
+slug: "template"
 id: 4
 blog_id: 102
 thumbnail: '../../src/assets/images/kitten_360.jpg'
